@@ -1,0 +1,250 @@
+/* App Layout */
+.app {
+  min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.main-content {
+  margin-top: 70px; /* Account for fixed navbar */
+}
+
+/* Section Styling */
+.section {
+  min-height: calc(100vh - 70px);
+  padding: 50px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+  color: white;
+  min-height: calc(100vh - 70px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 40px;
+  max-width: 600px;
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: fadeInUp 1.2s ease-out 0.4s both;
+}
+
+.hero-buttons button {
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hero-buttons button:first-child {
+  background-color: white;
+  color: #2c3e50;
+}
+
+.hero-buttons button:first-child:hover {
+  background-color: #f8f9fa;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.hero-buttons button:last-child {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.hero-buttons button:last-child:hover {
+  background-color: white;
+  color: #2c3e50;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* About Section */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.about-card {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.about-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.about-card h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+.about-card:hover h3 {
+  color: #3498db;
+}
+
+/* Services Section */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.service-card {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.service-card h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+.service-card:hover h3 {
+  color: #3498db;
+}
+
+.service-card p {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+.service-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.service-card li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  color: #555;
+}
+
+.service-card li:last-child {
+  border-bottom: none;
+}
+
+.service-card li:before {
+  content: "✓";
+  color: #3498db;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.service-card li {
+  transition: all 0.2s ease;
+}
+
+.service-card:hover li {
+  padding-left: 5px;
+}
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* General Typography */
+h1, h2, h3, h4 {
+  color: #2c3e50;
+}
+
+h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-buttons button {
+    width: 200px;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+}
