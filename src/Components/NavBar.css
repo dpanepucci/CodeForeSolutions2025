@@ -27,13 +27,13 @@
   color: white; /* COMPANY NAME TOP LEFT */
   margin: 0;
   font-size: 1.5rem;
-  transition: transform 0.3s ease, color 0.3s ease;
-  cursor: pointer;
+  /* transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer; */
 }
 
 .navbar-logo h2:hover {
-  transform: scale(1.05);
-  color: #3498db;
+  /* transform: scale(1.05);
+  color: #3498db; */
 }
 
 .navbar-menu {
