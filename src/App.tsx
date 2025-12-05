@@ -11,7 +11,7 @@ function App() {
   const HomeSection = () => (
     <section id="home" className="section">
       <div className="hero">
-        <h1>CodeFore Solutions</h1>
+        <h1>REPLACE WITH LOGO</h1>
         <p>Turning ideas into reality through innovative technology solutions.</p>
         <div className="hero-buttons">
           <button onClick={() => setActiveSection('services')}>Our Services</button>
