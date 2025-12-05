@@ -19,11 +19,17 @@ function App() {
         </div>
       </div>
       <div className="portfolio">
-        <h2>Our Partners</h2>
-        <h4>Panepucci Repair and Services</h4>
-        <img src="../src/assets/panepucciSR.png" alt="Image of Panepucci Service and Repair logo" width="60%" />
-        <h4>Eaton Golf</h4>
-        <img src="PLACEHOLDER EATON GOLF" alt='Image of Eaton Golf logo' width="60%" />
+        <h2 className="portfolio-title">Our Partners</h2>
+        <div className="partner-item">
+          <h4>Panepucci Repair and Services</h4>
+          <a href="https://panepucci-repair-services.onrender.com">
+            <img className="partner-logo" src="../src/assets/panepucciSR.png" alt="Image of Panepucci Service and Repair logo" width="60%" />
+          </a>
+        </div>
+        <div className="partner-item">
+          <h4>Eaton Golf</h4>
+          <img className="partner-logo" src="PLACEHOLDER EATON GOLF" alt='Image of Eaton Golf logo' width="60%" />
+        </div>
       </div>
     </section>
   )

@@ -93,6 +93,72 @@ html {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Portfolio Section */
+.portfolio {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.portfolio-title {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 60px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.partner-item {
+  margin-bottom: 50px;
+  opacity: 0;
+  animation: slideInFromLeft 1s ease-out forwards;
+}
+
+.partner-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.partner-item:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.partner-item h4 {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  transition: color 0.3s ease;
+}
+
+.partner-item:hover h4 {
+  color: #3498db;
+}
+
+.partner-logo {
+  transition: all 0.4s ease;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.partner-logo:hover {
+  transform: scale(1.00) translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.partner-item a {
+  display: inline-block;
+}
+
 /* About Section */
 .about-grid {
   display: grid;
