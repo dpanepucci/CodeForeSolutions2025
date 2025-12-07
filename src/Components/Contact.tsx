@@ -1,7 +1,11 @@
 import './Contact.css'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-function Contact() {
+interface ContactProps {
+  preSelectedService?: string;
+}
+
+function Contact({ preSelectedService }: ContactProps) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -12,6 +16,16 @@ function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [emailCopied, setEmailCopied] = useState(false)
+
+  // Set pre-selected service when prop changes
+  useEffect(() => {
+    if (preSelectedService) {
+      setFormData(prev => ({
+        ...prev,
+        service: preSelectedService
+      }))
+    }
+  }, [preSelectedService])
 
   const handleCopyEmail = async () => {
     const email = 'codeforesolutions25@gmail.com'
@@ -163,9 +177,10 @@ function Contact() {
                   onChange={handleChange}
                 >
                   <option value="">Select a service</option>
-                  <option value="private-lessons">Tier 1: Web Development</option>
-                  <option value="group-lessons">Tier 2: Web Dev & Analytics</option>
-                  <option value="club-fitting">Tier 3: Web Dev, Analytics & AI</option>
+                  <option value="tier1">Tier 1: Web Development</option>
+                  <option value="tier2">Tier 2: Web Dev & Analytics</option>
+                  <option value="tier3">Tier 3: Web Dev, Analytics & AI</option>
+                  <option value="custom">Custom Solutions</option>
                   <option value="other">Other</option>
                 </select>
               </div>

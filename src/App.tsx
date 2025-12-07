@@ -6,6 +6,12 @@ import Contact from './Components/Contact'
 
 function App() {
   const [activeSection, setActiveSection] = useState('home')
+  const [selectedService, setSelectedService] = useState<string>('')
+
+  const handleServiceClick = (service: string) => {
+    setSelectedService(service)
+    setActiveSection('contact')
+  }
 
   // Home Section Component
   const HomeSection = () => (
@@ -84,7 +90,7 @@ function App() {
       <div className="container">
         <h2>Our Services</h2>
         <div className="services-grid">
-          <div className="service-card">
+          <div className="service-card" onClick={() => handleServiceClick('tier1')}>
             <h3>Tier 1: Web Development</h3>
             <p>Enhance your online presence with a professional website tailored to your needs.</p>
             <ul>
@@ -94,7 +100,7 @@ function App() {
               <li>Content management system integration</li>
             </ul>
           </div>
-          <div className="service-card">
+          <div className="service-card" onClick={() => handleServiceClick('tier2')}>
             <h3>Tier 2: Web Dev & Analytics</h3>
             <p>System reporting and data analysis to drive informed business decisions.</p>
             <ul>
@@ -104,7 +110,7 @@ function App() {
               <li>Organized data for easy access and interpretation</li>
             </ul>
           </div>
-          <div className="service-card">
+          <div className="service-card" onClick={() => handleServiceClick('tier3')}>
             <h3>Tier 3: Web Dev, Analytics & AI</h3>
             <p>Leverage artificial intelligence to automate processes and gain deeper insights.</p>
             <ul>
@@ -114,7 +120,7 @@ function App() {
               <li>Machine learning model development and deployment</li>
             </ul>
           </div>
-          <div className="service-card">
+          <div className="service-card" onClick={() => handleServiceClick('custom')}>
             <h3>Custom Solutions</h3>
             <p>Tailored technology solutions to meet your unique business challenges.</p>
             <ul>
@@ -139,7 +145,7 @@ function App() {
       case 'services':
         return <ServicesSection />
       case 'contact':
-        return <Contact />
+        return <Contact preSelectedService={selectedService} />
       default:
         return <HomeSection />
     }
