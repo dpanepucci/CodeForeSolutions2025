@@ -65,10 +65,13 @@ function App() {
           <div className="dev-team-image">
             <h3>Brad</h3>
             <img src="../src/assets/devTeam.png" alt="Brad headshot photo" />
+            <p>Best friends with ChatGPT</p>
             <h3>Stacy</h3>
             <img src="../src/assets/devTeam2.png" alt="Stacy headshot photo" />
+            <p>Owns two houses</p>
             <h3>Dylan</h3>
             <img src="../src/assets/devTeam3.png" alt="Dylan headshot photo" />
+            <p>Just a nurse</p>
           </div>
         </div>
       </div>
