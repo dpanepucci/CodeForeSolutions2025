@@ -1,17 +1,54 @@
 
 import './App.css'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import NavBar from './Components/NavBar'
 import Contact from './Components/Contact'
 
 function App() {
   const [activeSection, setActiveSection] = useState('home')
   const [selectedService, setSelectedService] = useState<string>('')
+  const portfolioRef = useRef<HTMLDivElement>(null)
 
   const handleServiceClick = (service: string) => {
     setSelectedService(service)
     setActiveSection('contact')
   }
+
+  // Intersection Observer for scroll-triggered animation
+  useEffect(() => {
+    // Only set up observer when on home section
+    if (activeSection !== 'home' || !portfolioRef.current) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const partnerItems = entry.target.querySelectorAll('.partner-item')
+          if (entry.isIntersecting) {
+            // Add visible class when scrolling into view
+            partnerItems.forEach((item) => {
+              item.classList.add('visible')
+            })
+          } else {
+            // Remove visible class when scrolling out of view
+            partnerItems.forEach((item) => {
+              item.classList.remove('visible')
+            })
+          }
+        })
+      },
+      { threshold: 0.2 } // Trigger when 20% of the element is visible
+    )
+
+    if (portfolioRef.current) {
+      observer.observe(portfolioRef.current)
+    }
+
+    return () => {
+      if (portfolioRef.current) {
+        observer.unobserve(portfolioRef.current)
+      }
+    }
+  }, [activeSection]) // Re-run when activeSection changes
 
   // Home Section Component
   const HomeSection = () => (
@@ -24,7 +61,7 @@ function App() {
           <button onClick={() => setActiveSection('contact')}>Get Started</button>
         </div>
       </div>
-      <div className="portfolio">
+      <div className="portfolio" ref={portfolioRef}>
         <h2 className="portfolio-title">Our Partners</h2>
         <div className="partner-item">
           <h4>Panepucci Repair and Services</h4>

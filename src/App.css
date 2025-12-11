@@ -110,14 +110,19 @@ html {
 .partner-item {
   margin-bottom: 50px;
   opacity: 0;
+  transform: translateX(-100px);
+  transition: none;
+}
+
+.partner-item.visible {
   animation: slideInFromLeft 1s ease-out forwards;
 }
 
-.partner-item:nth-child(2) {
+.partner-item.visible:nth-child(2) {
   animation-delay: 0.2s;
 }
 
-.partner-item:nth-child(3) {
+.partner-item.visible:nth-child(3) {
   animation-delay: 0.4s;
 }
 
