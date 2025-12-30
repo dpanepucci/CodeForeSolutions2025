@@ -54,7 +54,7 @@ function App() {
   const HomeSection = () => (
     <section id="home" className="section">
       <div className="hero">
-        <h1>REPLACE WITH LOGO</h1>
+        <img src ="../src/assets/cropped_codefore_logo.png" alt="CodeFore Solutions Logo" className="hero-logo" />
         <p>Turning ideas into reality through innovative technology solutions.</p>
         <div className="hero-buttons">
           <button onClick={() => setActiveSection('services')}>Our Services</button>
