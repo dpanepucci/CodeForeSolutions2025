@@ -67,7 +67,7 @@ Ready to take your business online or give your existing website a modern makeov
 - 📧 Email: codeforesolutions25@gmail.com
 - ⏰ Hours: 
   - Monday - Friday: 8:00 AM - 6:00 PM
-  - Saturday - Sunday: 7:00 AM - 7:00 PM
+  - Saturday - Sunday: Closed
 
 ---
 

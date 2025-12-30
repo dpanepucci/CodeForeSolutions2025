@@ -115,7 +115,7 @@ function Contact({ preSelectedService }: ContactProps) {
               <div className="contact-item">
                 <h4>Hours</h4>
                 <p>Monday - Friday: 8:00 AM - 6:00 PM<br />
-                   Saturday - Sunday: 7:00 AM - 7:00 PM</p>
+                   Saturday - Sunday: Closed</p>
               </div>
             </div>
           </div>
